@@ -94,7 +94,37 @@ optional arguments:
   -t {0,1,2}, --target_model {0,1,2}
                         target model that we want it predicts differently
 ```
+### DeepHunter
+```
+usage: gen_diff.py [-h] [-g GAMMA] [-p P_MIN] [-a ALPHA] [-b BELTA]
+                  [-t {0,1,2}]
+                  number_mutation target_dir coverage threshold log_path
+                  save_path {random,probability}
 
+Main function for DeepHunter strategy
+
+positional arguments:
+  number_mutation       the number of mutation for a seed
+  target_dir            the dir that saves the generated adversarial inputs
+  coverage              the coverage metric
+  threshold             threshold for determining neuron activated
+  log_path              the path of file recorded the log info
+  save_path             the dir that saves the adversarial inputs
+  {random, probability}  the selecting seed strategy
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -g GAMMA, --gamma GAMMA
+                        the probabilities adjusting factor
+  -p P_MIN, --p_min P_MIN
+                        the minimum probability for selecting a seed
+  -a ALPHA, --alpha ALPHA
+                        a mutation constraint parameter
+  -b BELTA, --belta BELTA
+                        a mutation constraint parameter
+  -t {0,1,2}, --target_model {0,1,2}
+                        target model that we want it predicts differently
+```
 ## File structure
 - DeepXplore: the dir that saves the Implemented scripts
 -seeds: the dir that saves the images of seed queue
